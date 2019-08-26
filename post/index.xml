@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on STAT-5014 Fall 2019</title>
+    <link>/STAT_5014_Fall_2019/post/</link>
+    <description>Recent content in Posts on STAT-5014 Fall 2019</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/STAT_5014_Fall_2019/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introductions, Reproducible Research, (a little) R, and (a little) Git</title>
+      <link>/STAT_5014_Fall_2019/2019/08/28/lecture-1/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/STAT_5014_Fall_2019/2019/08/28/lecture-1/</guid>
+      <description>Today’s Agenda  Introduce the course Introduce the concepts of Reproducible Research Introduce Git
+ Introduce R as the (main) platform for the course Homework 1   Course Learning Objectives  R programming Reproducible research concepts Good programming practices
+ Data cleaning and munging Git fundamentals Markdown Python basics   Tentative Course Lecture Schedule see website
+ Passing the course Q. How do you pass the course??</description>
+    </item>
+    
+    <item>
+      <title>Sample homework</title>
+      <link>/STAT_5014_Fall_2019/2019/07/12/sample-homework/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/STAT_5014_Fall_2019/2019/07/12/sample-homework/</guid>
+      <description>
+
+
+&lt;p&gt;This is a sample of how I would like the homework to look when turned in.
+</description>
+    </item>
+    
+  </channel>
+</rss>
