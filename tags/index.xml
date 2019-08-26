@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on STAT-5014 Fall 2019</title>
-    <link>/STAT_5014_Fall_2019/tags/</link>
+    <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/</link>
     <description>Recent content in Tags on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/STAT_5014_Fall_2019/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LaTeX</title>
-      <link>/STAT_5014_Fall_2019/tags/latex/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/latex/</link>
       <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/latex/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lecture</title>
-      <link>/STAT_5014_Fall_2019/tags/lecture/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</link>
       <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/lecture/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reproducible Research</title>
-      <link>/STAT_5014_Fall_2019/tags/reproducible-research/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/reproducible-research/</link>
       <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/reproducible-research/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/reproducible-research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmarkdown</title>
-      <link>/STAT_5014_Fall_2019/tags/rmarkdown/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/rmarkdown/</link>
       <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/rmarkdown/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/rmarkdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sample homework</title>
-      <link>/STAT_5014_Fall_2019/tags/sample-homework/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/sample-homework/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/sample-homework/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/sample-homework/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Schedule</title>
-      <link>/STAT_5014_Fall_2019/tags/schedule/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/schedule/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/schedule/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/schedule/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Syllabus</title>
-      <link>/STAT_5014_Fall_2019/tags/syllabus/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/syllabus/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/syllabus/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/syllabus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>/STAT_5014_Fall_2019/tags/docker/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/docker/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/docker/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>/STAT_5014_Fall_2019/tags/git/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/git/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/git/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>homework</title>
-      <link>/STAT_5014_Fall_2019/tags/homework/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/homework/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/tags/homework/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/homework/</guid>
       <description></description>
     </item>
     

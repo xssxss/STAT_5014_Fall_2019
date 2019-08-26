@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>STAT-5014 Fall 2019</title>
-    <link>/STAT_5014_Fall_2019/</link>
+    <link>http://rsettlage.github.io/STAT_5014_Fall_2019/</link>
     <description>Recent content on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/STAT_5014_Fall_2019/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Introductions, Reproducible Research, (a little) R, and (a little) Git</title>
-      <link>/STAT_5014_Fall_2019/2019/08/28/lecture-1/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/08/28/lecture-1/</link>
       <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/2019/08/28/lecture-1/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/08/28/lecture-1/</guid>
       <description>Today’s Agenda  Introduce the course Introduce the concepts of Reproducible Research Introduce Git
  Introduce R as the (main) platform for the course Homework 1   Course Learning Objectives  R programming Reproducible research concepts Good programming practices
  Data cleaning and munging Git fundamentals Markdown Python basics   Tentative Course Lecture Schedule see website
@@ -25,10 +25,10 @@
     
     <item>
       <title>Sample homework</title>
-      <link>/STAT_5014_Fall_2019/2019/07/12/sample-homework/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/07/12/sample-homework/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/2019/07/12/sample-homework/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/07/12/sample-homework/</guid>
       <description>
 
 
@@ -38,10 +38,10 @@
     
     <item>
       <title>Configuring Docker -- Work in progress!!</title>
-      <link>/STAT_5014_Fall_2019/docker-config/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/docker-config/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/docker-config/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/docker-config/</guid>
       <description>Nothing to do here!!
 OK, decided to ditch the local config. In spite of the fact that Docker is supposed to be platform agnostic, it needs some sort of virtualization layer, so some versions of Windows are a no-go, eg Windows Home Ed. We will use Docker in Docker and use Singularity to launch it.
 Let’s talk a little about Docker. Docker, imo, takes us to the extreme end of reproducible research.</description>
@@ -49,10 +49,10 @@ Let’s talk a little about Docker. Docker, imo, takes us to the extreme end of 
     
     <item>
       <title>Git Conf</title>
-      <link>/STAT_5014_Fall_2019/git-config/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/git-config/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/git-config/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/git-config/</guid>
       <description>
 
 
@@ -62,10 +62,10 @@ Let’s talk a little about Docker. Docker, imo, takes us to the extreme end of 
     
     <item>
       <title>Stat 5014 Fall 2019 Schedule</title>
-      <link>/STAT_5014_Fall_2019/schedule/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/schedule/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/schedule/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/schedule/</guid>
       <description>
 
 
@@ -75,10 +75,10 @@ Let’s talk a little about Docker. Docker, imo, takes us to the extreme end of 
     
     <item>
       <title>Stat 5014 Fall 2019 Syllabus</title>
-      <link>/STAT_5014_Fall_2019/syllabus/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/syllabus/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/syllabus/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/syllabus/</guid>
       <description>
 
 
@@ -88,10 +88,10 @@ Let’s talk a little about Docker. Docker, imo, takes us to the extreme end of 
     
     <item>
       <title>Submitting homework</title>
-      <link>/STAT_5014_Fall_2019/homework-submit/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/homework-submit/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/homework-submit/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/homework-submit/</guid>
       <description>
 
 
@@ -101,10 +101,10 @@ Let’s talk a little about Docker. Docker, imo, takes us to the extreme end of 
     
     <item>
       <title>About</title>
-      <link>/STAT_5014_Fall_2019/about/</link>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/STAT_5014_Fall_2019/about/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/about/</guid>
       <description>This class is STAT 5014. It is a 1 credit P/F class designed to get students up to speed with R and at least aware of other languages. At 1 credit, we do not have time to cover many advanced topics. Generally, I will introduce topics and I will provide lots of reading material for those interested in learning more.
 Course material Generally, there will be 3 parts:
  Lecture slides &amp;ndash; html style markdown</description>
