@@ -1,6 +1,6 @@
 ---
-title: "Homework 1"
-subtitle: "Due: at beginning of first class"
+title: "Homework 0"
+subtitle: "Due: more like a guide to knowing you are setup"
 author: "Robert Settlage"
 authorbox: false
 slug: "Homeowrk 1"
@@ -20,7 +20,7 @@ output:
 header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{mathrsfs}
 ---
 
-Homework 1 is all about being prepared.  Install *ALL* the required software.  For the submission, please knit to pdf the default document as described below, print and bring to class.  This is the *ONLY* homework you will turn in via a printed copy.
+Homework 0 is all about being prepared.  Install *ALL* the required software.  For the submission, please knit to pdf the default document as described below, print and bring to class.  This is the *ONLY* homework you will turn in via a printed copy.
 
 1. File --> New File --> R Markdown
 2. Fill in Author (you) and title (Homework 1)
@@ -36,7 +36,7 @@ Package         Source
 Git:            https://git-scm.com/
 Github:         https://github.com (account) 
 Docker:         https://docs.docker.com/get-started/
-LaTeX:           https://miktex.org/
+LaTeX:          https://miktex.org/
 R:              https://cran.r-project.org/  
 Rstudio:        http://rstudio.com/  
 -------         --------------------------------

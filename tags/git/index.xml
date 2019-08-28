@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on STAT-5014 Fall 2019</title>
-    <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/git/</link>
+    <link>/STAT_5014_Fall_2019/tags/git/</link>
     <description>Recent content in git on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/STAT_5014_Fall_2019/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git Conf</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/git-config/</link>
+      <link>/STAT_5014_Fall_2019/git-config/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/git-config/</guid>
+      <guid>/STAT_5014_Fall_2019/git-config/</guid>
       <description>
 
 
