@@ -44,7 +44,7 @@ header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{ma
 
 ## Tentative Course Lecture Schedule  
 
-see website
+https://rsettlage.github.io/STAT_5014_Fall_2019/schedule/
 
 ## Passing the course  
 
