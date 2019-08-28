@@ -15,11 +15,12 @@ tags:
 - Rmarkdown
 - LaTeX
 output:
-  ioslides_presentation: 
+  ioslides_presentation:
     fig_caption: yes
     fig_height: 6
     fig_width: 4
     smaller: yes
+  slidy_presentation: default
 header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{mathrsfs}
 ---
 
@@ -43,7 +44,7 @@ header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{ma
 
 ## Tentative Course Lecture Schedule  
 
-see website: <https://rsettlage.github.io/STAT_5014_Fall_2019/schedule/>
+see website
 
 ## Passing the course  
 
@@ -143,7 +144,7 @@ knitr::include_graphics("./img/Git_flow.png")
  
 From Hadley Wickham & Garrett Grolemund's R for Data Science 
 <http://r4ds.had.co.nz>  
-![Tesla P100](./img/data-science-pipeline.png)  
+![R data science](./img/data-science-pipeline.png)  
 
 ## Reproducible Research Pipeline 
 
