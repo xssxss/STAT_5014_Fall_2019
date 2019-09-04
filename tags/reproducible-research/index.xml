@@ -6,10 +6,26 @@
     <description>Recent content in Reproducible Research on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/STAT_5014_Fall_2019/tags/reproducible-research/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data structures, Reproducible Research, loading, cleaning and munging data in R</title>
+      <link>/STAT_5014_Fall_2019/2019/09/05/lecture-2/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/STAT_5014_Fall_2019/2019/09/05/lecture-2/</guid>
+      <description>Today’s Agenda  Review the concepts of Reproducible Research
+ Review Git
+ Importing, cleaning and munging data Summarizing and exploring data Vectors, matrices, and data frames Homework 3   Thoughts/issues from last time/homework Homework
+-Swirl – thoughts?
+-Git – ok?
+-R – any problems? Knitr and LaTeX?
+ Reproducible Research | Review This was the scenario:
+You had worked 6 months to analyze a data set. Someone else analyzes the data and comes to different conclusions.</description>
+    </item>
     
     <item>
       <title>Introductions, Reproducible Research, (a little) R, and (a little) Git</title>
