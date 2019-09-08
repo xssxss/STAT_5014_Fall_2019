@@ -4,61 +4,78 @@
   
   <url>
     <loc>/STAT_5014_Fall_2019/categories/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/2019/09/05/lecture-2/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/git/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/latex/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/categories/lecture/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/lecture/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/post/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/reproducible-research/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/rmarkdown/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/STAT_5014_Fall_2019/tags/munging/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/STAT_5014_Fall_2019/2019/08/28/lecture-1/</loc>
     <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/tags/latex/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/categories/lecture/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/tags/lecture/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/post/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/tags/reproducible-research/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/tags/rmarkdown/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/tags/</loc>
-    <lastmod>2019-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -117,12 +134,6 @@
   
   <url>
     <loc>/STAT_5014_Fall_2019/tags/docker/</loc>
-    <lastmod>2019-07-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/STAT_5014_Fall_2019/tags/git/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

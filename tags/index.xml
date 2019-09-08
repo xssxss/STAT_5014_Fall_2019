@@ -6,15 +6,24 @@
     <description>Recent content in Tags on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/STAT_5014_Fall_2019/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Git</title>
+      <link>/STAT_5014_Fall_2019/tags/git/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/STAT_5014_Fall_2019/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>LaTeX</title>
       <link>/STAT_5014_Fall_2019/tags/latex/</link>
-      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/STAT_5014_Fall_2019/tags/latex/</guid>
       <description></description>
@@ -23,7 +32,7 @@
     <item>
       <title>Lecture</title>
       <link>/STAT_5014_Fall_2019/tags/lecture/</link>
-      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/STAT_5014_Fall_2019/tags/lecture/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>Reproducible Research</title>
       <link>/STAT_5014_Fall_2019/tags/reproducible-research/</link>
-      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/STAT_5014_Fall_2019/tags/reproducible-research/</guid>
       <description></description>
@@ -41,9 +50,18 @@
     <item>
       <title>Rmarkdown</title>
       <link>/STAT_5014_Fall_2019/tags/rmarkdown/</link>
-      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/STAT_5014_Fall_2019/tags/rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>munging</title>
+      <link>/STAT_5014_Fall_2019/tags/munging/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/STAT_5014_Fall_2019/tags/munging/</guid>
       <description></description>
     </item>
     
@@ -80,15 +98,6 @@
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/STAT_5014_Fall_2019/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>/STAT_5014_Fall_2019/tags/git/</link>
-      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/STAT_5014_Fall_2019/tags/git/</guid>
       <description></description>
     </item>
     
