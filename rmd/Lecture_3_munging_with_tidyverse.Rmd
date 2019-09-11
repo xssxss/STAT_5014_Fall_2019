@@ -81,7 +81,7 @@ I generally pull the data down, then save the data to an .Rds file.  My project 
 ?str, ?summary, group_by and dplyr, should mention doBy package  
 Sometimes, a picture really is worth a 1000 words.
 
-```{r boxexample, echo=F, include=T, eval=T, fig.width=6, fig.height=4}
+```{r boxexample, echo=F, include=T, eval=T, fig.width=6, fig.height=4, fig.path='./img/'}
     library(beeswarm)
     sex <- (runif(1000)>0.5)*1
     drug_duration <- sex*0.1 + rnorm(1000, 0, 0.1) + 5
