@@ -88,6 +88,10 @@ Run the following code until I fix the figure... =/
     drug_duration <- sex*0.1 + rnorm(1000, 0, 0.1) + 5
     drug_info <- data.frame(cbind(drug_duration,sex))
     drug_info$id <- ifelse(drug_info$sex==0,"M","F")
+```
+
+## box example
+```{r boxexample2, echo=F, include=T,fig.width=6, fig.height=4, fig.path='./img/'}
     par(mfcol=c(1,2))
     boxplot(drug_info$drug_duration)
     beeswarm(drug_duration,add=T, pch=20, cex=0.3)

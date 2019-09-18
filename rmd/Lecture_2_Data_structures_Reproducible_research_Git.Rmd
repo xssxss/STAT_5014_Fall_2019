@@ -99,13 +99,13 @@ The basic workflow is:
 - Modified - file is changed but not committed it to your database yet  
 - Staged - a modified file in its current version will go in next commit snapshot
 
-![Git file lifecycle](/img/git_file_lifecycle.png)
+![Git file lifecycle](./img/git_file_lifecycle.png)
 
 ## Back to Reproducible Research Analysis
 
 From Hadley Wickham & Garrett Grolemund's R for Data Science 
 <http://r4ds.had.co.nz>  
-![Data Science Pipeline](/img/data-science-pipeline.png)  
+![Data Science Pipeline](./img/data-science-pipeline.png)  
 
 Today we focus on getting and cleaning the data.
 

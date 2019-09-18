@@ -179,13 +179,11 @@ Sometimes, a picture really is worth a 1000 words.</p>
     sex &lt;- (runif(1000)&gt;0.5)*1
     drug_duration &lt;- sex*0.1 + rnorm(1000, 0, 0.1) + 5
     drug_info &lt;- data.frame(cbind(drug_duration,sex))
-    drug_info$id &lt;- ifelse(drug_info$sex==0,&quot;M&quot;,&quot;F&quot;)
-    par(mfcol=c(1,2))
-    boxplot(drug_info$drug_duration)
-    beeswarm(drug_duration,add=T, pch=20, cex=0.3)
-    boxplot(drug_duration~id,drug_info)
-    beeswarm(drug_duration~id,drug_info, add=T, pch=20, cex=0.3)</code></pre>
-<p><img src="img/boxexample-1.png" width="576" /></p>
+    drug_info$id &lt;- ifelse(drug_info$sex==0,&quot;M&quot;,&quot;F&quot;)</code></pre>
+</div>
+<div id="box-example" class="section level2">
+<h2>box example</h2>
+<p><img src="img/boxexample2-1.png" width="576" /></p>
 </div>
 <div id="problem-1-data-import" class="section level2">
 <h2>Problem 1 – Data import</h2>
@@ -358,6 +356,9 @@ y_i = \beta_1 x_{i1} + \beta_2 x_{i2} ...
 	<div class="post-nav__item post-nav__item--prev">
 		<a class="post-nav__link" href="/STAT_5014_Fall_2019/2019/09/05/lecture-2/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Data structures, Reproducible Research, loading, cleaning and munging data in R</p></a>
 	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/STAT_5014_Fall_2019/2019/09/19/lecture-4/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">R functions and logic, good programming practices</p></a>
+	</div>
 </nav>
 
 
@@ -375,9 +376,9 @@ y_i = \beta_1 x_{i1} + \beta_2 x_{i2} ...
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/STAT_5014_Fall_2019/2019/09/19/lecture-4/">R functions and logic, good programming practices</a></li>
 			<li class="widget__item"><a class="widget__link" href="/STAT_5014_Fall_2019/2019/09/12/lecture-3/">Data wrangling, munging and creating tidy datasets</a></li>
 			<li class="widget__item"><a class="widget__link" href="/STAT_5014_Fall_2019/2019/09/05/lecture-2/">Data structures, Reproducible Research, loading, cleaning and munging data in R</a></li>
-			<li class="widget__item"><a class="widget__link" href="/STAT_5014_Fall_2019/2019/08/28/lecture-1/">Introductions, Reproducible Research, (a little) R, and (a little) Git</a></li>
 		</ul>
 	</div>
 </div>
@@ -394,10 +395,13 @@ y_i = \beta_1 x_{i1} + \beta_2 x_{i2} ...
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/docker" title="Docker">Docker</a>
+		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/functions" title="Functions">Functions</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/git" title="Git">Git</a>
+		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/good-programming" title="Good programming">Good programming</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/homework" title="Homework">Homework</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/latex" title="Latex">Latex</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/lecture" title="Lecture">Lecture</a>
+		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/logic" title="Logic">Logic</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/munging" title="Munging">Munging</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/reproducible-research" title="Reproducible research">Reproducible research</a>
 		<a class="widget-taglist__link widget__link btn" href="/STAT_5014_Fall_2019/tags/rmarkdown" title="Rmarkdown">Rmarkdown</a>
