@@ -1,0 +1,227 @@
+---
+title: "Stat 5014 HW3"
+author: "Bob Settlage"
+date: '`r Sys.Date()`'
+output:
+  pdf_document: default
+  fig_caption: yes
+  fig_height: 6
+  fig_width: 7
+  classoption: landscape
+header-includes: \setlength\parindent{24pt} \usepackage{MnSymbol} \usepackage{mathrsfs}
+---
+
+```{r setup, include=FALSE, message=F, warning=F}
+    #initialize and load libraries
+    rm(list = ls())   
+    graphics.off()
+    options(scipen = 4, digits = 6)
+    options(stringsAsFactors = FALSE)
+    knitr::opts_chunk$set(echo = F, eval=T, cache=T, tidy.opts=list(width.cutoff=55),
+                tidy=T, include=FALSE, message=F, warning=F)
+    library.warn <- library
+    library <- function(package, help, pos = 2, lib.loc = NULL, character.only = FALSE,
+                        logical.return = FALSE, warn.conflicts = FALSE, quietly = TRUE,
+                        verbose = getOption("verbose")) {
+       if (!character.only) {
+          package <- as.character(substitute(package))
+       }
+       suppressPackageStartupMessages(library.warn(
+          package, help, pos, lib.loc, character.only = TRUE,
+          logical.return, warn.conflicts, quietly, verbose))}
+    #setwd("~/Google Drive/Projects/....")
+
+    #install.packages("scatterplot3d")
+    #library(scatterplot3d)
+    #install.packages("car")
+    #library(car)
+    #library(doParallel)
+    #setup parallel backend to use 7 processors
+    #no_cores <- detectCores() - 2
+    #cl<-makeCluster(no_cores)
+    #registerDoParallel(cl)
+    #stopCluster(cl)
+    #library(MASS)
+    #library(RColorBrewer)
+    #library(plot3D)
+    #install.packages("tidyverse") ##kinda overkill, only need dplyr and tidyr
+    library(tidyverse)
+    library(beeswarm)
+    library(stargazer)
+    library(data.table)
+    library(lubridate)
+```
+
+```{r misc_function}
+# A function for captioning and referencing images
+# figure captions are a pain IMO, I don't remember where I got this from but it may be referenced here: 
+##https://rpubs.com/ajlyons/autonumfigs
+
+fig <- local({
+    i <- 0
+    ref <- list()
+    list(
+        cap=function(refName, text) {
+            i <<- i + 1
+            ref[[refName]] <<- i
+            text
+        },
+        ref=function(refName) {
+            ref[[refName]]
+        })
+})
+#cat("\n\n\\pagebreak\n")
+```
+
+# Problem 1
+
+Swirl -- done.
+
+# Problem 2
+
+This document.
+
+# Problem 3
+
+Here we will read in, clean and filter datasets with the final goal of creating tidy datasets.  I am going to create a table as proof of _tidy_ data.
+
+## Part A: Sensory data
+
+The first data set is the sensory data set.  The main problems are the header doesn't import with the correct number of fields and the array is ragged.  I am going to use the skip and fill settings to deal with this on import and then manually set the column names.  Although, I could read in the column names using readLines using a different sep setting.
+
+```{r Problem5_Sensory_analysis, echo=T, eval=T, include=T}
+    ########################### 
+    #Problem5_Sensory_analysis  
+    #get data  
+    ########################### 
+    url <- "http://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/Sensory.dat"
+    Sensory_raw <- read.table(url, header=F, skip=1, fill=T, stringsAsFactors = F)
+    # I recommend downloading and saving, you then
+    # work from the downloaded version
+    # so this knits well from the web, I am not
+    #saveRDS(Sensory_raw, "Sensory_raw.RDS")
+    #Sensory_raw <- readRDS("Sensory_raw.RDS")
+    Sensory_tidy <- Sensory_raw[-1,]
+    Sensory_tidy_a <- filter(.data = Sensory_tidy,V1 %in% 1:10) %>%
+                    rename(Item=V1,V1=V2,V2=V3,V3=V4,V4=V5,V5=V6)
+    Sensory_tidy_b <- filter(.data = Sensory_tidy,!(V1 %in% 1:10)) %>%
+                    mutate(Item=rep(as.character(1:10),each=2)) %>%
+                    mutate(V1=as.numeric(V1)) %>%
+                    select(c(Item,V1:V5))
+    Sensory_tidy <- bind_rows(Sensory_tidy_a,Sensory_tidy_b)
+    colnames(Sensory_tidy) <- c("Item",paste("Person",1:5,sep="_"))
+    Sensory_tidy <- Sensory_tidy %>%  
+        gather(Person,value,Person_1:Person_5) %>%  
+        mutate(Person = gsub("Person_","",Person)) %>%
+        arrange(Item)
+    
+    ########################### 
+    
+```
+
+\noindent That wasn't too bad.  The summary of the dataset is included in Table 1 below.  Item and Person are characters and value is a number as expected.  A plot would be good, but since we aren't going to analyze it, eh.
+
+```{r Sensory_table, echo=F, include=T, eval=T, results='asis'}
+    knitr::kable(summary(Sensory_tidy), caption="Sensory data summary")
+```
+
+## Part B: Long Jump data
+
+As the code is the problem, I include it here.  Many times, the code is important to keep and show, but not important to the discussion, so it would get pushed to the Appendix.  See Appendix.  Again, skip and fill are useful.  The main problem here is the table is essentially wrapped and we need to stack it.  For good measure, I am adding converting the year code to actual year.
+
+```{r Problem5_LongJump_analysis, echo=T, eval=T, include=T}
+    ########################### 
+    #Problem5_LongJump_analysis  
+    #get data  
+    ########################### 
+    url<-"http://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/LongJumpData.dat"
+    LongJump_raw<-read.table(url, header=F, skip=1, fill=T, stringsAsFactors = F)
+    #saveRDS(LongJump_raw,"LongJump_raw.RDS")
+    #LongJump_raw <- readRDS("LongJump_raw.RDS")
+    colnames(LongJump_raw)<-rep(c("V1","V2"),4)
+    LongJump_tidy<-rbind(LongJump_raw[,1:2],LongJump_raw[,3:4],
+                             LongJump_raw[,5:6],LongJump_raw[,7:8])
+    LongJump_tidy<-LongJump_tidy %>%  
+        filter(!(is.na(V1))) %>%
+        mutate(YearCode=V1, Year=V1+1900, dist=V2) %>%
+        select(-V1,-V2)
+    
+    ########################### 
+```
+
+\noindent Again, not terrible.  See Table 2.  Field values are numbers and there appears to be no missing values.
+
+```{r LongJump_table, echo=F, include=T, eval=T, results='asis'}
+    knitr::kable(summary(LongJump_tidy), caption="Long Jump data summary")
+```
+
+## Part C: Brain vs Body data
+
+More munging.  Code in Appendix to show how to do multiple code chunks.  This one is similar to the last, it is wrapped and we need to stack it.
+
+```{r Problem5_BrainBody_analysis, echo=F, eval=T}
+    ########################### 
+    #Problem5_BrainBody_analysis  
+    #get data  
+    ########################### 
+    url<-"http://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/BrainandBodyWeight.dat"
+    BrainBody_raw<-read.table(url, header=F, skip=1, fill=T, stringsAsFactors = F)
+    #saveRDS(BrainBody_raw,"BrainBody_raw.RDS")
+    #BrainBody_raw<-readRDS("BrainBody_raw.RDS")
+    colnames(BrainBody_raw)<-rep(c("Brain","Body"),3)
+    BrainBody_tidy<-rbind(BrainBody_raw[,1:2],BrainBody_raw[,3:4],
+                             BrainBody_raw[,5:6])
+    BrainBody_tidy<-BrainBody_tidy %>%  
+        filter(!(is.na(Brain))) 
+    
+    ########################### 
+    
+```
+
+\noindent Ditto to the previous.  See table 3.
+
+```{r BrainBody_table, echo=F, include=T, eval=T, results='asis'}
+    knitr::kable(summary(BrainBody_tidy), caption="Brain/Body weight data summary")
+```
+  
+## Part C: Tomato data
+
+This time, the problem is the names are causing troubles.  Still not too bad using some regex.
+
+```{r Problem5_Tomato_analysis, echo=F, eval=T, include=T}
+    ########################### 
+    #Problem5_Tomato_analysis  
+    #get data  
+    ########################### 
+    url<-"http://www2.isye.gatech.edu/~jeffwu/wuhamadabook/data/tomato.dat"
+    Tomato_raw<-read.table(url, header=F, skip=2, fill=T, stringsAsFactors = F, comment.char = "")
+    #saveRDS(Tomato_raw,"Tomato_raw.RDS")
+    #Tomato_raw<-readRDS("Tomato_raw.RDS")
+    Tomato_tidy<-Tomato_raw %>%  
+        separate(V2,into=paste("C10000",1:3,sep="_"),sep=",",remove=T, extra="merge") %>%
+        separate(V3,into=paste("C20000",1:3,sep="_"),sep=",",remove=T, extra="merge") %>%
+        separate(V4,into=paste("C30000",1:3,sep="_"),sep=",",remove=T, extra="merge") %>%
+        mutate(C10000_3=gsub(",","",C10000_3)) %>%
+        gather(Clone,value,C10000_1:C30000_3) %>%
+        mutate(Variety=V1, Clone=gsub("C","",Clone)) %>%
+        mutate(Variety=gsub("\\\\#"," ",Variety)) %>%
+        separate(Clone,into = c("Clone","Replicate")) %>%
+        select(-V1,Variety,Clone,value) %>%
+        arrange(Variety) 
+        
+    ########################### 
+    
+```
+
+
+\noindent Table 4 gives output from tidying of the tomato data.
+
+```{r Tomato_table, echo=F, include=T, eval=T, results='asis'}
+    knitr::kable(summary(Tomato_tidy), caption="Tomato data summary")
+```
+  
+  
+# Appendix 1: R code  
+```{r Appendix, ref.label=c("Problem5_LongJump_analysis","Problem5_BrainBody_analysis"), echo=TRUE, eval=F, tidy=TRUE, include=T}
+  
+```
