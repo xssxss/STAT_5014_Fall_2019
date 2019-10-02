@@ -4,8 +4,8 @@ subtitle: "Oct 2, 2019"
 author: "Robert Settlage"
 authorbox: false
 slug: "Lecture-6"
-date: 2019-09-26
-publishdate: 2019-09-24
+date: 2019-10-02
+publishdate: 2019-10-02
 draft: false
 mathjax: true
 categories:
