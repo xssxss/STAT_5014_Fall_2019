@@ -4,19 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>The apply family of functions - STAT-5014 Fall 2019</title>
+	<title>Going parallel in R - STAT-5014 Fall 2019</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-	<meta property="og:title" content="The apply family of functions" />
-<meta property="og:description" content="Today’s Agenda  Function optimizing
- Apply functions   Functions and Timing As you start to make functions, it is a good idea to think about how long things take.
-Really good blog on this here: https://www.r-bloggers.com/5-ways-to-measure-running-time-of-r-code/
-Consider the following code and timings:
- library(&quot;microbenchmark&quot;) ## calculate mean of vector lvec &lt;- 10000 vec &lt;- rnorm(lvec) times&lt;-microbenchmark(result1&lt;-mean(vec), result2&lt;-sum(vec)/length(vec), result3&lt;-sum(vec)/lvec,times = 100, unit = &quot;ms&quot;) identical(result1, result2) ## [1] FALSE  Functions and Timing ggplot2::autoplot(times) ## Coordinate system already present." />
+	<meta property="og:title" content="Going parallel in R" />
+<meta property="og:description" content="Today’s Agenda  Apply review parallel programming using  parapply foreach    Apply family of functions We often want to “apply” a function along a “margin” of our data. In the previous example, we used a matrix operation, but what if we have a custom function we wish to use.
+In R, we have helper functions to further simplify our code by obviating the for loop.
+Apply family:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/02/lecture-6/" />
-<meta property="article:published_time" content="2019-10-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-10-02T00:00:00+00:00" />
+<meta property="og:url" content="http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/07/lecture-7/" />
+<meta property="article:published_time" content="2019-10-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-07T00:00:00+00:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -81,11 +79,11 @@ Consider the following code and timings:
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">The apply family of functions</h1>
+			<h1 class="post__title">Going parallel in R</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-10-02T00:00:00">October 02, 2019</time>
+	<time class="meta__text" datetime="2019-10-07T00:00:00">October 07, 2019</time>
 </div>
 
 <div class="meta__item-categories meta__item">
@@ -95,63 +93,18 @@ Consider the following code and timings:
 </div>
 		</header><div class="content post__content clearfix">
 			
-<script src="/STAT_5014_Fall_2019/rmarkdown-libs/kePrint/kePrint.js"></script>
 
 
 <div id="todays-agenda" class="section level2">
 <h2>Today’s Agenda</h2>
 <ul>
-<li>Function optimizing<br />
-</li>
-<li>Apply functions</li>
+<li>Apply review</li>
+<li>parallel programming using
+<ul>
+<li>parapply</li>
+<li>foreach</li>
+</ul></li>
 </ul>
-</div>
-<div id="functions-and-timing" class="section level2">
-<h2>Functions and Timing</h2>
-<p>As you start to make functions, it is a good idea to think about how long things take.</p>
-<p>Really good blog on this here: <a href="https://www.r-bloggers.com/5-ways-to-measure-running-time-of-r-code/" class="uri">https://www.r-bloggers.com/5-ways-to-measure-running-time-of-r-code/</a></p>
-<p>Consider the following code and timings:</p>
-<pre class="r"><code>    library(&quot;microbenchmark&quot;)
-    ## calculate mean of vector
-    lvec &lt;- 10000
-    vec &lt;- rnorm(lvec)
-    times&lt;-microbenchmark(result1&lt;-mean(vec),
-                          result2&lt;-sum(vec)/length(vec),
-                          result3&lt;-sum(vec)/lvec,times = 100, unit = &quot;ms&quot;)
-    identical(result1, result2)</code></pre>
-<pre><code>## [1] FALSE</code></pre>
-</div>
-<div id="functions-and-timing-1" class="section level2">
-<h2>Functions and Timing</h2>
-<pre class="r"><code>ggplot2::autoplot(times)</code></pre>
-<pre><code>## Coordinate system already present. Adding new coordinate system, which will replace the existing one.</code></pre>
-<p><img src="/STAT_5014_Fall_2019/post/Lecture_6_apply_functions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-</div>
-<div id="matrix" class="section level2">
-<h2>Matrix</h2>
-<p>Last week, we went through matrix operations and hopefully talked about why we don’t invert matrices:</p>
-<p><a href="https://www.johndcook.com/blog/2010/01/19/dont-invert-that-matrix/" class="uri">https://www.johndcook.com/blog/2010/01/19/dont-invert-that-matrix/</a>
-<a href="https://www.r-bloggers.com/dont-invert-that-matrix-why-and-how/" class="uri">https://www.r-bloggers.com/dont-invert-that-matrix-why-and-how/</a></p>
-<pre class="r"><code>    n &lt;- 2000
-    A = matrix(rnorm(n*n, mean=0, sd=5), n, n)
-    y &lt;- rnorm(n)
-    time1 &lt;- system.time({b_inverting &lt;- solve(A)%*%y})
-    time2 &lt;- system.time({b_solving &lt;- solve(A,y)})
-    time3 &lt;- system.time({b_matrix_solve &lt;- Matrix::solve(A,y)})
-
-    print(rbind(time1, time2, time3)[,1:3])</code></pre>
-<pre><code>##       user.self sys.self elapsed
-## time1     1.408    0.042   0.304
-## time2     0.335    0.015   0.127
-## time3     1.006    0.049   0.805</code></pre>
-<pre class="r"><code>    max(c(abs(b_inverting - b_solving),abs(b_matrix_solve - b_solving)))</code></pre>
-<pre><code>## [1] 7.449596e-14</code></pre>
-</div>
-<div id="for-those-interested-in-boosting-thier-local-r" class="section level2">
-<h2>For those interested in boosting thier local R</h2>
-<p>Not all installations of R come accelerated:</p>
-<p><em>There are several highly optimized libraries that can be used instead of the default base libraries. These libraries are optimized to take advantage of the hardware they are run on, and can be significatantly faster than the base implementation (operations such as Matrix multiplications may be over 40 times faster</em><br />
-<a href="https://csantill.github.io/RPerformanceWBLAS/" class="uri">https://csantill.github.io/RPerformanceWBLAS/</a></p>
 </div>
 <div id="apply-family-of-functions" class="section level2">
 <h2>Apply family of functions</h2>
@@ -178,149 +131,153 @@ Consider the following code and timings:
 <p>We could start with the help <code>?apply, ?sapply</code>. The main differences are:<br />
 <a href="http://www.dummies.com/programming/r/how-to-use-the-apply-family-of-functions-in-r/" class="uri">http://www.dummies.com/programming/r/how-to-use-the-apply-family-of-functions-in-r/</a></p>
 </div>
-<div id="apply-functions" class="section level2">
-<h2>Apply functions</h2>
-<pre><code>## Loading required package: xml2</code></pre>
-<table class="table" style="font-size: 5px; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Function Name
-</th>
-<th style="text-align:left;">
-Objects the Function Works On
-</th>
-<th style="text-align:left;">
-What the Function Sees as Elements
-</th>
-<th style="text-align:left;">
-Result Type
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-apply
-</td>
-<td style="text-align:left;">
-Matrix
-</td>
-<td style="text-align:left;">
-Rows or columns
-</td>
-<td style="text-align:left;">
-Vector, matrix, array, or list
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Array
-</td>
-<td style="text-align:left;">
-Rows, columns, or any dimension
-</td>
-<td style="text-align:left;">
-Vector, matrix, array, or list
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Data frame
-</td>
-<td style="text-align:left;">
-Rows or columns
-</td>
-<td style="text-align:left;">
-Vector, matrix, array, or list
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-sapply
-</td>
-<td style="text-align:left;">
-Vector
-</td>
-<td style="text-align:left;">
-Elements
-</td>
-<td style="text-align:left;">
-Vector, matrix, or list
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Data frame
-</td>
-<td style="text-align:left;">
-Variables
-</td>
-<td style="text-align:left;">
-Vector, matrix, or list
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-List
-</td>
-<td style="text-align:left;">
-Elements
-</td>
-<td style="text-align:left;">
-Vector, matrix, or list
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-lapply
-</td>
-<td style="text-align:left;">
-Vector
-</td>
-<td style="text-align:left;">
-Elements
-</td>
-<td style="text-align:left;">
-List
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Data frame
-</td>
-<td style="text-align:left;">
-Variables
-</td>
-<td style="text-align:left;">
-List
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-List
-</td>
-<td style="text-align:left;">
-Elements
-</td>
-<td style="text-align:left;">
-List
-</td>
-</tr>
-</tbody>
-</table>
+<div id="apply-on-a-big-matrix" class="section level2">
+<h2>Apply on a big matrix</h2>
+<pre class="r"><code>  size &lt;- 1e4
+  big_x &lt;- matrix(rnorm(size^2),nrow=size)
+  object.size(big_x)
+  system.time({median(apply(big_x,1,median))})
+  # ca. 8 sec on my Mac</code></pre>
+</div>
+<div id="what-if-we-want-to-go-really-big" class="section level2">
+<h2>What if we want to go really big</h2>
+<p>Turns out, the first thing we need to do is worry about how big an object we can store. It seems as though, in R 3.5 there were some limits imposed on our vectors that were not present in earlier releases.</p>
+<p><a href="https://stackoverflow.com/questions/51248293/error-vector-memory-exhausted-limit-reached-r-3-5-0-macos/51956149#51956149" class="uri">https://stackoverflow.com/questions/51248293/error-vector-memory-exhausted-limit-reached-r-3-5-0-macos/51956149#51956149</a></p>
+<p>So, reading through that, how we we ‘fix’ it?</p>
+<pre class="r"><code>  size &lt;- 5e4
+  big_x &lt;- matrix(rnorm(size^2),nrow=size)
+
+  library(usethis)
+  usethis::edit_r_environ()</code></pre>
+<p>Now add the following line to this file, save and restart R:
+<code>R_MAX_VSIZE=100Gb</code></p>
+<p>I put 100 Gb and it works on my Mac. This may or may not be appropriate for your system. On our clusters, it depends on the job size and cluster you get a job on. On Cascades, for a full node, 100Gb will fit in RAM.</p>
+</div>
+<div id="bigger-example" class="section level2">
+<h2>Bigger example</h2>
+<pre class="r"><code>  size &lt;- 5e4
+  big_x &lt;- matrix(rnorm(size^2),nrow=size)
+  object.size(big_x)
+  system.time({median(apply(big_x,1,median))})
+  # 8 min on my Mac</code></pre>
+</div>
+<div id="an-aside-on-rs-startup" class="section level2">
+<h2>An aside on R’s startup</h2>
+<p>The basic idea is that much of what we want all the time can be configured so we don’t have to continuously type it. For some of this, we can and should put this in a code chunk at the start of our Markdown files. For instance, setting a path. For other things we just want all the time that is more like style preferences or things R needs to do as it starts, we need to edit our R startup files.</p>
+<p><a href="https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/" class="uri">https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/</a></p>
+<p>This is what we did a few slides ago using the <code>usethis</code> package. We added an environment variable to R’s startup so that we could create larger vectors.</p>
+<p>Note that when sharing cose, you need to be a little careful about how custum you make your startup. Commonly used helper functions and other customizations could be better in a package. For some other startup tricks:<br />
+<a href="https://www.gettinggeneticsdone.com/2011/08/sync-your-rprofile-across-multiple-r.html" class="uri">https://www.gettinggeneticsdone.com/2011/08/sync-your-rprofile-across-multiple-r.html</a></p>
+</div>
+<div id="parapply" class="section level2">
+<h2>parapply</h2>
+<p>This doesn’t seem like a very big matrix, but it takes a while to do the compute. How can we do this faster?</p>
+<ul>
+<li>colSums<br />
+</li>
+<li>go parallel</li>
+</ul>
+<pre class="r"><code># Determine the number of available cores
+library(parallel)
+
+## good idea to leave a little for system stuff
+cores &lt;- 5
+cores &lt;- detectCores() - 1 
+cores &lt;- max(1, detectCores() - 1)
+
+# Create a cluster via makeCluster
+cl &lt;- makeCluster(cores)
+
+# Parallelize
+system.time({median(parApply(cl, big_x, 2, median))})
+#4 sec
+
+# Stop the cluster
+stopCluster(cl)</code></pre>
+</div>
+<div id="what-can-be-parallelized" class="section level2">
+<h2>What can be parallelized</h2>
+<p><code>embarassingly</code> parallel tasks are perfect candidates. Things that update, somewhere between maybe and no.</p>
+<pre class="r"><code>  ## yes
+  # operations across margins of a dataset
+  # see above
+  # bootstrapping, ie independent operations on a dataset
+  bootstrapped_mean &lt;- function(data, size){
+    s &lt;- sample(1:nrow(data),size)
+    return(mean(data[s]))
+  }
+  
+  ## no (or not usually)
+  cumprod() #could be clever to make this parallel
+  # Monte Carlo
+  ## again, could be clever
+  ## dependent loops
+  for(i in 2:100){
+    x[i] &lt;- x[i-1]
+  }</code></pre>
+</div>
+<div id="types-of-clusters" class="section level2">
+<h2>types of clusters</h2>
+<ul>
+<li>FORK (Mac/Linux)
+divide and conquer, env goes with fork, but may diverge during run</li>
+<li>PSOCK (all - default)
+nothing exported except base packages</li>
+</ul>
+<p><a href="https://stackoverflow.com/questions/36794063/r-foreach-from-single-machine-to-cluster" class="uri">https://stackoverflow.com/questions/36794063/r-foreach-from-single-machine-to-cluster</a></p>
+<pre class="r"><code>cl&lt;-makeCluster(cores)
+base &lt;- 2
+
+# clusterExport(cl, &quot;base&quot;)
+parLapply(cl, 
+          2:4, 
+          function(exponent) 
+            base^exponent)
+
+stopCluster(cl)</code></pre>
+</div>
+<div id="steps" class="section level2">
+<h2>steps</h2>
+<ul>
+<li>load package</li>
+<li>make cluster</li>
+<li>export data/functions (clusterExport or clusterEvalQ)</li>
+<li>do work</li>
+<li>stop cluster!! &lt;– super important unless you want to reboot ;)</li>
+</ul>
+</div>
+<div id="foreach" class="section level2">
+<h2>foreach</h2>
+<p>The <code>foreach</code> package works much like lapply. Note that this returns a list like lapply. You can change this, for instance, try <code>.combine = 'c'</code>.</p>
+<p><a href="https://privefl.github.io/blog/a-guide-to-parallelism-in-r/" class="uri">https://privefl.github.io/blog/a-guide-to-parallelism-in-r/</a></p>
+<pre class="r"><code>library(foreach)
+foreach(i=2:4) %do% {
+  2^i
+}</code></pre>
+</div>
+<div id="going-parallel" class="section level2">
+<h2>Going parallel</h2>
+<p>The last set ran sequentially, if we want to do this in parallel, we need to make and register a cluster and use <code>dopar</code>.</p>
+<pre class="r"><code>makeCluster(cores)
+registerDoParallel(cl)
+foreach(i=2:4, .combine = &#39;c&#39;) %dopar% {
+  2^i
+}
+stopCluster(cl)</code></pre>
+</div>
+<div id="data-and-packages" class="section level2">
+<h2>Data and packages</h2>
+<p>The foreach package works more like a <em>PSOCK</em> cluster but it exports variables it needs. However, it only looks in the env the foreach call is made in. So, you either need to use the .export option or make sure the data is in the current env (pass in to function if you are in a function).</p>
+<p>For packages, you have two options, a) use the .packages option or b) use the package::function construct.</p>
+</div>
+<div id="seeds" class="section level2">
+<h2>seeds</h2>
+<p>Seeds are one thing you need to be careful with when trying to parallelize. You either want the same or different seeds across all workers.</p>
+<p>Instead of using <code>set.seed</code>, use <code>clusterSetRNGStream</code></p>
+<p><a href="https://www.johndcook.com/blog/2016/01/29/random-number-generator-seed-mistakes/" class="uri">https://www.johndcook.com/blog/2016/01/29/random-number-generator-seed-mistakes/</a>
+<a href="https://grokbase.com/t/r/r-sig-hpc/106hvnreqp/parallel-random-numbers-set-seed-i-rsprng-rlecuyer" class="uri">https://grokbase.com/t/r/r-sig-hpc/106hvnreqp/parallel-random-numbers-set-seed-i-rsprng-rlecuyer</a></p>
+<p><a href="https://rstudio-pubs-static.s3.amazonaws.com/225942_3229fa0992bd4146b7edf75f60a34bdc.html" class="uri">https://rstudio-pubs-static.s3.amazonaws.com/225942_3229fa0992bd4146b7edf75f60a34bdc.html</a></p>
+<p><code>bigstatsr</code></p>
 </div>
 
 		</div>
@@ -329,7 +286,8 @@ List
 	<svg class="tags__icon icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item"><a class="tags__link btn" href="/STAT_5014_Fall_2019/tags/lecture/" rel="tag">Lecture</a></li>
-		<li class="tags__item"><a class="tags__link btn" href="/STAT_5014_Fall_2019/tags/apply/" rel="tag">apply</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/STAT_5014_Fall_2019/tags/math/" rel="tag">math</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/STAT_5014_Fall_2019/tags/parallel/" rel="tag">parallel</a></li>
 	</ul>
 </div>
 	</article>
@@ -338,10 +296,7 @@ List
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/STAT_5014_Fall_2019/2019/09/25/lecture-5/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Vector and matrix math</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/STAT_5014_Fall_2019/2019/10/07/lecture-7/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Going parallel in R</p></a>
+		<a class="post-nav__link" href="/STAT_5014_Fall_2019/2019/10/02/lecture-6/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">The apply family of functions</p></a>
 	</div>
 </nav>
 

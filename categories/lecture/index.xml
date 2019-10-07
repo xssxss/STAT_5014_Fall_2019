@@ -6,17 +6,17 @@
     <description>Recent content in Lecture on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/categories/lecture/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Going parallel in R</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/09/lecture-7/</link>
-      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/07/lecture-7/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/09/lecture-7/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/07/lecture-7/</guid>
       <description>Today’s Agenda  Apply review parallel programming using  parapply foreach    Apply family of functions We often want to “apply” a function along a “margin” of our data. In the previous example, we used a matrix operation, but what if we have a custom function we wish to use.
 In R, we have helper functions to further simplify our code by obviating the for loop.
 Apply family:</description>
@@ -32,7 +32,7 @@ Apply family:</description>
  Apply functions   Functions and Timing As you start to make functions, it is a good idea to think about how long things take.
 Really good blog on this here: https://www.r-bloggers.com/5-ways-to-measure-running-time-of-r-code/
 Consider the following code and timings:
- library(&amp;quot;microbenchmark&amp;quot;) ## calculate mean of vector lvec &amp;lt;- 10000 vec &amp;lt;- rnorm(lvec) times&amp;lt;-microbenchmark(result1&amp;lt;-mean(vec), result2&amp;lt;-sum(vec)/length(vec), result3&amp;lt;-sum(vec)/lvec,times = 100, unit = &amp;quot;ms&amp;quot;) identical(result1, result2) ## [1] TRUE  Functions and Timing ggplot2::autoplot(times) ## Coordinate system already present.</description>
+ library(&amp;quot;microbenchmark&amp;quot;) ## calculate mean of vector lvec &amp;lt;- 10000 vec &amp;lt;- rnorm(lvec) times&amp;lt;-microbenchmark(result1&amp;lt;-mean(vec), result2&amp;lt;-sum(vec)/length(vec), result3&amp;lt;-sum(vec)/lvec,times = 100, unit = &amp;quot;ms&amp;quot;) identical(result1, result2) ## [1] FALSE  Functions and Timing ggplot2::autoplot(times) ## Coordinate system already present.</description>
     </item>
     
     <item>
