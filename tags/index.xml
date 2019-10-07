@@ -6,10 +6,37 @@
     <description>Recent content in Tags on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lecture</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parallel</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/parallel/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/parallel/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>apply</title>
@@ -17,15 +44,6 @@
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/apply/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lecture</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</link>
-      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</guid>
       <description></description>
     </item>
     
@@ -44,15 +62,6 @@
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/logic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>math</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</link>
-      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</guid>
       <description></description>
     </item>
     
