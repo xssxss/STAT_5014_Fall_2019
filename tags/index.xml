@@ -6,44 +6,62 @@
     <description>Recent content in Tags on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>good programming</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/good-programming/</link>
-      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/good-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Lecture</title>
       <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</link>
-      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/lecture/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>logic</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/logic/</link>
-      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      <title>math</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/logic/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>math</title>
-      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</link>
+      <title>parallel</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/parallel/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/parallel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apply</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/apply/</link>
       <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/math/</guid>
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/apply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>good programming</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/good-programming/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/good-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logic</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/logic/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/tags/logic/</guid>
       <description></description>
     </item>
     

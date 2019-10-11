@@ -12,9 +12,7 @@ categories:
 - Lecture
 tags:
 - Lecture
-- math
-- good programming
-- logic
+- apply
 output:
   ioslides_presentation:
     fig_caption: yes
@@ -38,7 +36,7 @@ Really good blog on this here:  <https://www.r-bloggers.com/5-ways-to-measure-ru
 
 Consider the following code and timings:
 
-```{r echo=T, eval=T, cache=F,tidy=F}
+```{r echo=T, eval=T, cache=F, tidy=F}
 
     library("microbenchmark")
     ## calculate mean of vector
@@ -52,7 +50,7 @@ Consider the following code and timings:
 
 ## Functions and Timing
 
-```{r echo=T, eval=T, cache=F,tidy=T, include=T, fig.height=4}
+```{r echo=T, eval=T, cache=F, tidy=T, include=T, fig.height=4}
     ggplot2::autoplot(times)
 ```
 
