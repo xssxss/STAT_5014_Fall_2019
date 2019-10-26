@@ -6,10 +6,21 @@
     <description>Recent content on STAT-5014 Fall 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://rsettlage.github.io/STAT_5014_Fall_2019/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Projecting knowledge in plots</title>
+      <link>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/22/lecture-8/</link>
+      <pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://rsettlage.github.io/STAT_5014_Fall_2019/2019/10/22/lecture-8/</guid>
+      <description>Today’s Agenda  Review good programming practices
+ Review functions and looping
+ Introduce Data Exploration Introduce Base R plotting Introduce “Grammer of Graphics” Homework 8   Good Programming Practices We started the class with ideas around Reproducible Research. The main idea being that the output we create should be something that someone else can reproduce. Code is an intricate part of our life and falls in the same bucket.</description>
+    </item>
     
     <item>
       <title>Going parallel in R</title>
